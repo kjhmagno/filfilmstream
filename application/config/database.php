@@ -49,7 +49,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'icsuplb';
+$db['default']['password'] = 'july1388';
 $db['default']['database'] = 'filfilmstream';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
