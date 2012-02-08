@@ -1,0 +1,119 @@
+{{ doctype('xhtml1-trans') }}
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}{% endblock %}{{ title }}</title>
+
+<style type="text/css">
+	@import "/assets/css/blitzer/jquery-ui-1.8.17.custom.css";
+</style>
+
+<style type="text/css">
+body {
+	font-size: 80%;
+}
+</style>
+
+<script type="text/javascript" src="/assets/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.layout-latest.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.layout.resizePaneAccordions-1.0.js"></script>
+<script type="text/javascript">
+	var myLayout;
+
+	$(document).ready(function () {
+		myLayout = $('body').layout({
+			west__size:			300,
+			east__size:			300,
+			// RESIZE Accordion widget when panes resize
+			west__onresize:		$.layout.callbacks.resizePaneAccordions,
+			east__onresize:		$.layout.callbacks.resizePaneAccordions
+		});
+
+		$("#accordion1").accordion({ fillSpace:	true });
+		$("#accordion2").accordion({
+			fillSpace:	true,
+			active:		1
+		});
+ 	});
+
+	</script>
+</head>
+<body>
+
+<div class="ui-layout-north ui-widget-content" style="display: none;">
+	<h1>{{ title }}</h1>
+</div>
+
+<div class="ui-layout-south ui-widget-content" style="display: none;">
+	<p>All rights reserved &copy; 2011-2012</p>
+</div>
+
+<div class="ui-layout-center" style="display: none;"> 
+	<h3 class="ui-widget-header">Center Pane</h3>
+	<p class="ui-layout-content ui-widget-content">
+		<b>NOTE</b>: As of UI v1.7.1, the Accordion widget has a 'resize' method.
+		If you were previously using the patched version of ui.accordion, 
+		you should upgrade to the latest versions of jQuery and jQuery UI.
+	</p>
+</div>
+
+<div class="ui-layout-west" style="display: none;">
+	<div id="accordion1" class="basic">
+
+			<h3><a href="#">Section 1</a></h3>
+
+			<div>
+				<h5>West Pane</h5>
+				<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. 
+					Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc.</p>
+				<p>Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. 
+					Vestibulum a velit eu ante scelerisque vulputate.</p>
+			</div>
+
+			<h3><a href="#">Section 2</a></h3>
+
+			<div>
+				<h5>Sed Non Urna</h5>
+				<p>Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus.
+					Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit,
+					faucibus interdum tellus libero ac justo.</p>
+				<p>Vivamus non quam. In suscipit faucibus urna.</p>
+			</div>
+
+			<h3><a href="#">Section 3</a></h3>
+
+			<div>
+				<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+					Phasellus pellentesque purus in massa. Aenean in pede.</p>
+				<p>Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, 
+					magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.</p>
+				<ul>
+					<li>List item one</li>
+					<li>List item two</li>
+					<li>List item three</li>
+
+				</ul>
+			</div>
+
+			<h3><a href="#">Section 4</a></h3>
+			<div>
+				<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames 
+					ac turpis egestas.</p>
+				<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+					Aenean lacinia mauris vel est.</p>
+				<p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+					Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+			</div>
+
+	</div>
+</div>
+
+<div class="ui-layout-east" style="display: none;">
+	<h3 class="ui-widget-header">Adverstisements</h3>
+	<div class="ui-layout-content"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+Entities\CustomerSubscriptions:
+  type: entity
+  table: tbl_customer_subscriptions
+  fields:
+    id:
+      id: true
+      type: smallint
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    startDate:
+      type: date
+      nullable: false
+      column: start_date
+    endDate:
+      type: date
+      nullable: false
+      column: end_date
+    status:
+      type: string
+      length: 10
+      nullable: false
+  oneToOne:
+    customers:
+      targetEntity: Entities\Customers
+    subscriptions:
+      targetEntity: Entities\Subscriptions
+  manyToMany:
+    movies:
+      targetEntity: Entities\Movies
+      inversedBy: customerSubscriptions

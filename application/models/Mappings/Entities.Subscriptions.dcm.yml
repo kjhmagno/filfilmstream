@@ -1,0 +1,17 @@
+Entities\Subscriptions:
+  type: entity
+  table: tbl_subscriptions
+  fields:
+    id:
+      id: true
+      type: smallint
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    description:
+      type: string
+      length: 30
+      nullable: false
+    price:
+      type: decimal
+      precision: 2
