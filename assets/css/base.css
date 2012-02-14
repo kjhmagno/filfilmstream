@@ -1,0 +1,31 @@
+body { font-size: 75%; }
+#accessMenu li { display: inline; }
+#advertisement li { line-height: 2em; }
+#loadingOverlay { background: #fff url("../image/loadingAnimation.gif") no-repeat 10px 23px; }
+#loadingOverlay .loadingMessage { padding: 25px 40px; }
+
+#loginLoading,
+#registerLoading { background: transparent url("../image/loadingAnimation.gif") no-repeat; width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-left: 8px; }
+/*#loginLoading .loadingMessage,
+#registerLoading .loadingMessage { padding: 10px 48px; }*/
+
+.pageOverlay { top: 0; left: 0; position: absolute; height: 100%; width: 100%; z-index: 1001; display: block; }
+.ui-layout-center,
+.ui-layout-west,
+.ui-layout-east,
+.ui-layout-east,
+.ui-layout-content { padding: 0; overflow: hidden; }
+.ui-list { list-style: none; }
+.ui-layout-toggler-north-open,
+.ui-layout-toggler-south-closed { background: url("../image/toggle-up.gif") no-repeat center bottom; }
+.ui-layout-toggler-north-closed,
+.ui-layout-toggler-south-open { background: url("../image/toggle-dn.gif") no-repeat center top; }
+.ui-layout-toggler-east-closed,
+.ui-layout-toggler-west-open { background: url("../image/toggle-lt.gif") no-repeat center right; }
+.ui-layout-toggler-west-closed,
+.ui-layout-toggler-east-open { background: url("../image/toggle-rt.gif") no-repeat center left; }
+.ffs-header,
+.ffs-content { padding: 0 1em; }
+.float-left { float: left; }
+.float-right { float: right; }
+.clear { clear: both; }

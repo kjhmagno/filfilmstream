@@ -13,8 +13,12 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->helper('form');
+
 		$this->_var['title'] = "FilFilmStream";
-		$this->twig->add_function(array_merge($this->config->item('ci_html')));
+		$this->twig->add_function(array_merge(
+			$this->config->item('ci_html'), $this->config->item('ci_url'), $this->config->item('ci_form')
+		));
 
 		$this->twig->display('welcome/index.twig', $this->_var);
 	}

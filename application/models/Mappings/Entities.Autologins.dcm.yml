@@ -1,0 +1,27 @@
+Entities\Autologins:
+  type: entity
+  table: tbl_autologins
+  fields:
+    keyId:
+      id: true
+      type: string
+      length: 32
+      nullable: false
+      column: key_id
+    userAgent:
+      type: string
+      length: 150
+      nullable: false
+      column: user_agent
+    lastIp:
+      type: string
+      length: 40
+      nullable: false
+      column: last_ip
+    lastLogin:
+      type: datetime
+      nullable: false
+      column: last_login
+  manyToOne:
+    accounts:
+      targetEntity: Entities\Accounts

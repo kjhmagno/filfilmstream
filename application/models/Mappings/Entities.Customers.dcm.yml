@@ -48,11 +48,6 @@ Entities\Customers:
       type: string
       length: 6
       nullable: false
-    accountLevel:
-      type: string
-      length: 5
-      nullable: false
-      column: account_level
     lastIp:
       type: string
       length: 40

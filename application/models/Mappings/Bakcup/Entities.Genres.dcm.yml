@@ -1,0 +1,13 @@
+Entities\Genres:
+  type: entity
+  table: tbl_genres
+  fields:
+    id:
+      id: true
+      type: smallint
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    type:
+      type: string
+      length: 30

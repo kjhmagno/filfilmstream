@@ -1,0 +1,22 @@
+Entities\LoginAttempts:
+  type: entity
+  table: tbl_login_attempts
+  fields:
+    id:
+      id: true
+      type: integer
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    ipAddress:
+      type: string
+      length: 40
+      nullable: false
+      column: ip_address
+    account:
+      type: string
+      length: 50
+      nullable: false
+    time:
+      type: datetime
+      nullable: false

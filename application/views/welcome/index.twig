@@ -1,1 +1,15 @@
 {% extends "base.twig" %}
+
+{% block center %}
+<div class="ui-widget-content ui-corner-all ffs-content">
+	<h2>Welcome to {{ title }}</h2>
+</div>
+{% endblock %}
+
+{% block headJS %}
+<script type="text/javascript" src="/assets/js/welcome/index.js"></script>
+{% endblock %}
+
+{% block bodyJS %}
+<script type="text/javascript">$(document).ready($.ffs_welcome_index.init);</script>
+{% endblock %}
