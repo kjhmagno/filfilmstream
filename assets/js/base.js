@@ -6,10 +6,10 @@
 				resizable : false
 			},
 			west : {
-				size : 300
+				size : "20%"
 			},
 			east : {
-				size : 300
+				size : "20%"
 			}
 		},
 
@@ -25,6 +25,10 @@
 		styleFormElements : function(formNode) {
 			formNode.find('input[type="text"], textarea, select').each(function(index) {
 				$(this).addClass("ui-state-default");
+			});
+
+			formNode.find("td").each(function(index) {
+				$(this).css("padding-bottom", "0.85em");
 			});
 		},
 
@@ -63,7 +67,12 @@
 		},
 
 		showLogin : function() {
+			if ($("#loginDialog").length)
+				$("#loginDialog").remove();
+
 			loginDialog = $('<div/>', { id : "loginDialog" }).html(login);
+
+			$("#loginDialog:ui-dialog").dialog("destroy");
 
 			loginDialog.dialog({
 				modal : true,
@@ -89,11 +98,14 @@
 
 		submitLoginForm : function(event) {
 			if ($("#loginError").length) {
-				$("#loginError").hide();
+				$("#loginError").remove();
 
-				loginDialog.dialog("widget").animate({
-					width : "320",
-				}, 500);
+				loginDialog.dialog("widget").animate({ width : "320" }, {
+					duration : 500,
+					step : function() {
+						loginDialog.dialog('option', 'position', 'center');
+					}
+				});
 			}
 
 			if (!loginLoading.is(":visible"))
@@ -107,14 +119,18 @@
 					if (data.result) {
 						console.log(data);
 					} else {
-						loginDialog.dialog("widget").animate({
-							width : "580",
-						}, 500, function() {
-							$("<div/>", {
-								id : "loginError", class : "ui-state-error ui-corner-all"
-							}).css({
-								"padding" : "0 1em", "float" : "right"
-							}).html(data.message).fadeIn("slow").insertAfter(loginModal);
+						loginDialog.dialog("widget").animate({ width : "580" }, {
+							duration : 500,
+							step : function() {
+								loginDialog.dialog('option', 'position', 'center');
+							},
+							complete : function() {
+								$("<div/>", {
+									id : "loginError", class : "ui-state-error ui-corner-all"
+								}).css({
+									"padding" : "0 1em", "float" : "right"
+								}).html(data.message).fadeIn("slow").insertAfter(loginModal);
+							}
 						});
 					}
 				}, "json");
@@ -123,7 +139,12 @@
 		},
 
 		showRegister : function() {
+			if ($("#registerDialog").length)
+				$("#registerDialog").remove();
+
 			registerDialog = $('<div/>', { id : "registerDialog" }).html(register);
+
+			$("#registerDialog:ui-dialog").dialog("destroy");
 
 			registerDialog.dialog({
 				modal : true,
@@ -167,11 +188,14 @@
 
 		submitRegisterForm : function(event) {
 			if ($("#registerError").length) {
-				$("#registerError").hide();
+				$("#registerError").remove();
 
-				registerDialog.dialog("widget").animate({
-					width : "320",
-				}, 500);
+				registerDialog.dialog("widget").animate({ width : "320", }, {
+					duration : 500,
+					step : function() {
+						registerDialog.dialog('option', 'position', 'center');
+					}
+				});
 			}
 
 			if (!registerLoading.is(":visible"))
@@ -185,14 +209,18 @@
 					if (data.result) {
 						console.log(data);
 					} else {
-						registerDialog.dialog("widget").animate({
-							width : "610",
-						}, 500, function() {
-							$("<div/>", {
-								id : "registerError", class : "ui-state-error ui-corner-all"
-							}).css({
-								"padding" : "0 1em", "float" : "right"
-							}).html(data.message).fadeIn("slow").insertAfter(registerModal);
+						registerDialog.dialog("widget").animate({ width : "610" }, {
+							duration : 500,
+							step : function() {
+								registerDialog.dialog('option', 'position', 'center');
+							},
+							complete : function() {
+								$("<div/>", {
+									id : "registerError", class : "ui-state-error ui-corner-all"
+								}).css({
+									"padding" : "0 1em", "float" : "right"
+								}).html(data.message).fadeIn("slow").insertAfter(registerModal);
+							}
 						});
 					}
 				}, "json");
