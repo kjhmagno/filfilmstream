@@ -3,12 +3,10 @@ body { font-size: 75%; }
 #advertisement li { line-height: 2em; }
 #loadingOverlay { background: #fff url("../image/loadingAnimation.gif") no-repeat 10px 23px; }
 #loadingOverlay .loadingMessage { padding: 25px 40px; }
-
 #loginLoading,
 #registerLoading { background: transparent url("../image/loadingAnimation.gif") no-repeat; width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-left: 8px; }
 /*#loginLoading .loadingMessage,
 #registerLoading .loadingMessage { padding: 10px 48px; }*/
-
 .pageOverlay { top: 0; left: 0; position: absolute; height: 100%; width: 100%; z-index: 1001; display: block; }
 .ui-layout-center,
 .ui-layout-west,

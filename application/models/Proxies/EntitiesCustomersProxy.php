@@ -106,16 +106,16 @@ class EntitiesCustomersProxy extends \Entities\Customers implements \Doctrine\OR
         return parent::getMiddleName();
     }
 
-    public function setBirthday($birthday)
+    public function setBirthDate($birthDate)
     {
         $this->__load();
-        return parent::setBirthday($birthday);
+        return parent::setBirthDate($birthDate);
     }
 
-    public function getBirthday()
+    public function getBirthDate()
     {
         $this->__load();
-        return parent::getBirthday();
+        return parent::getBirthDate();
     }
 
     public function setAddress($address)
@@ -140,18 +140,6 @@ class EntitiesCustomersProxy extends \Entities\Customers implements \Doctrine\OR
     {
         $this->__load();
         return parent::getGender();
-    }
-
-    public function setAccountLevel($accountLevel)
-    {
-        $this->__load();
-        return parent::setAccountLevel($accountLevel);
-    }
-
-    public function getAccountLevel()
-    {
-        $this->__load();
-        return parent::getAccountLevel();
     }
 
     public function setLastIp($lastIp)
@@ -202,10 +190,22 @@ class EntitiesCustomersProxy extends \Entities\Customers implements \Doctrine\OR
         return parent::getModified();
     }
 
+    public function setActivated($activated)
+    {
+        $this->__load();
+        return parent::setActivated($activated);
+    }
+
+    public function getActivated()
+    {
+        $this->__load();
+        return parent::getActivated();
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'username', 'password', 'email', 'lastName', 'firstName', 'middleName', 'birthday', 'address', 'gender', 'accountLevel', 'lastIp', 'lastLogin', 'created', 'modified');
+        return array('__isInitialized__', 'id', 'username', 'password', 'email', 'lastName', 'firstName', 'middleName', 'birthDate', 'address', 'gender', 'lastIp', 'lastLogin', 'created', 'modified', 'activated');
     }
 
     public function __clone()

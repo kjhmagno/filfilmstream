@@ -37,9 +37,10 @@ Entities\Customers:
       length: 50
       nullable: false
       column: middle_name
-    birthday:
+    birthDate:
       type: date
       nullable: false
+      column: birth_date
     address:
       type: string
       length: 255
@@ -62,4 +63,7 @@ Entities\Customers:
       nullable: false
     modified:
       type: datetime
+      nullable: false
+    activated:
+      type: boolean
       nullable: false

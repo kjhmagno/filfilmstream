@@ -24,4 +24,4 @@ Entities\Autologins:
       column: last_login
   manyToOne:
     accounts:
-      targetEntity: Entities\Accounts
+      targetEntity: Entities\Customers

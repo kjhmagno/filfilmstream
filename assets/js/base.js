@@ -22,16 +22,6 @@
 			$.ffs_base.accessMenu();
 		},
 
-		styleFormElements : function(formNode) {
-			formNode.find('input[type="text"], textarea, select').each(function(index) {
-				$(this).addClass("ui-state-default");
-			});
-
-			formNode.find("td").each(function(index) {
-				$(this).css("padding-bottom", "0.85em");
-			});
-		},
-
 		accessMenu : function() {
 			if ($("#login").length) {
 				$("#login").button({
@@ -92,7 +82,6 @@
 					$("#loginSubmit").button();
 
 				loginForm.submit($.ffs_base.submitLoginForm);
-				$.ffs_base.styleFormElements(loginForm);
 			}
 		},
 
@@ -175,14 +164,16 @@
 					});
 				}
 
-				if ($("#birthdate").length)
-					$("#birthdate").datepicker();
+				if ($("#birth_date").length) {
+					$("#birth_date").datepicker({
+						dateFormat : 'yy-mm-dd'
+					});
+				}
 
 				if ($("#registerSubmit").length)
 					$("#registerSubmit").button();
 
 				registerForm.submit($.ffs_base.submitRegisterForm);
-				$.ffs_base.styleFormElements(registerForm);
 			}
 		},
 
@@ -209,7 +200,7 @@
 					if (data.result) {
 						console.log(data);
 					} else {
-						registerDialog.dialog("widget").animate({ width : "610" }, {
+						registerDialog.dialog("widget").animate({ width : "650" }, {
 							duration : 500,
 							step : function() {
 								registerDialog.dialog('option', 'position', 'center');

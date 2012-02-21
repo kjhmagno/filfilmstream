@@ -1,7 +1,7 @@
 <?php
 
 // trailing slash is important!
-define('APPPATH', '/home/liyah/public_html/filfilmstream/application/');
+define('APPPATH', '/home/tbcabagay/public_html/filfilmstream/application/');
 define('BASEPATH', APPPATH);
 define('ENVIRONMENT', 'production');
 

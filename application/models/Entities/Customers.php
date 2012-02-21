@@ -45,9 +45,9 @@ class Customers
     private $middleName;
 
     /**
-     * @var date $birthday
+     * @var date $birthDate
      */
-    private $birthday;
+    private $birthDate;
 
     /**
      * @var string $address
@@ -58,11 +58,6 @@ class Customers
      * @var string $gender
      */
     private $gender;
-
-    /**
-     * @var string $accountLevel
-     */
-    private $accountLevel;
 
     /**
      * @var string $lastIp
@@ -83,6 +78,11 @@ class Customers
      * @var datetime $modified
      */
     private $modified;
+
+    /**
+     * @var boolean $activated
+     */
+    private $activated;
 
 
     /**
@@ -216,23 +216,23 @@ class Customers
     }
 
     /**
-     * Set birthday
+     * Set birthDate
      *
-     * @param date $birthday
+     * @param date $birthDate
      */
-    public function setBirthday($birthday)
+    public function setBirthDate($birthDate)
     {
-        $this->birthday = $birthday;
+        $this->birthDate = new \DateTime($birthDate);
     }
 
     /**
-     * Get birthday
+     * Get birthDate
      *
      * @return date 
      */
-    public function getBirthday()
+    public function getBirthDate()
     {
-        return $this->birthday;
+        return $this->birthDate;
     }
 
     /**
@@ -276,26 +276,6 @@ class Customers
     }
 
     /**
-     * Set accountLevel
-     *
-     * @param string $accountLevel
-     */
-    public function setAccountLevel($accountLevel)
-    {
-        $this->accountLevel = $accountLevel;
-    }
-
-    /**
-     * Get accountLevel
-     *
-     * @return string 
-     */
-    public function getAccountLevel()
-    {
-        return $this->accountLevel;
-    }
-
-    /**
      * Set lastIp
      *
      * @param string $lastIp
@@ -322,7 +302,7 @@ class Customers
      */
     public function setLastLogin($lastLogin)
     {
-        $this->lastLogin = $lastLogin;
+        $this->lastLogin = new \DateTime($lastLogin);
     }
 
     /**
@@ -342,7 +322,7 @@ class Customers
      */
     public function setCreated($created)
     {
-        $this->created = $created;
+        $this->created = new \DateTime($created);
     }
 
     /**
@@ -362,7 +342,7 @@ class Customers
      */
     public function setModified($modified)
     {
-        $this->modified = $modified;
+        $this->modified = new \DateTime($modified);
     }
 
     /**
@@ -373,5 +353,25 @@ class Customers
     public function getModified()
     {
         return $this->modified;
+    }
+
+    /**
+     * Set activated
+     *
+     * @param boolean $activated
+     */
+    public function setActivated($activated)
+    {
+        $this->activated = $activated;
+    }
+
+    /**
+     * Get activated
+     *
+     * @return boolean 
+     */
+    public function getActivated()
+    {
+        return $this->activated;
     }
 }
