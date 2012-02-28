@@ -190,22 +190,10 @@ class EntitiesCustomersProxy extends \Entities\Customers implements \Doctrine\OR
         return parent::getModified();
     }
 
-    public function setActivated($activated)
-    {
-        $this->__load();
-        return parent::setActivated($activated);
-    }
-
-    public function getActivated()
-    {
-        $this->__load();
-        return parent::getActivated();
-    }
-
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'username', 'password', 'email', 'lastName', 'firstName', 'middleName', 'birthDate', 'address', 'gender', 'lastIp', 'lastLogin', 'created', 'modified', 'activated');
+        return array('__isInitialized__', 'id', 'username', 'password', 'email', 'lastName', 'firstName', 'middleName', 'birthDate', 'address', 'gender', 'lastIp', 'lastLogin', 'created', 'modified');
     }
 
     public function __clone()

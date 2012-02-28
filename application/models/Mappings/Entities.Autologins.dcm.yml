@@ -23,5 +23,5 @@ Entities\Autologins:
       nullable: false
       column: last_login
   manyToOne:
-    accounts:
+    customers:
       targetEntity: Entities\Customers

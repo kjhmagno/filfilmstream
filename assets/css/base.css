@@ -7,6 +7,10 @@ body { font-size: 75%; }
 #registerLoading { background: transparent url("../image/loadingAnimation.gif") no-repeat; width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-left: 8px; }
 /*#loginLoading .loadingMessage,
 #registerLoading .loadingMessage { padding: 10px 48px; }*/
+#loginModal,
+#loginError,
+#registerModal,
+#registerError { width: 300px; }
 .pageOverlay { top: 0; left: 0; position: absolute; height: 100%; width: 100%; z-index: 1001; display: block; }
 .ui-layout-center,
 .ui-layout-west,

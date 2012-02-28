@@ -9,7 +9,6 @@ $config['title'] = "FilFilmStream";
  | Accounts settings
  */
 $config['allow_registration'] = TRUE;
-$config['account_auto_approve'] = FALSE;
 $config['phpass_hash_strength'] = 8;
 $config['phpass_hash_portable'] = FALSE;
 

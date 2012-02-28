@@ -56,13 +56,17 @@
 			}
 		},
 
+		clearFormValues : function(form) {
+			form.find('input[type="text"], input[type="password"], textarea').each(function(index) { $(this).val(''); });
+		},
+
 		showLogin : function() {
 			if ($("#loginDialog").length)
 				$("#loginDialog").remove();
 
-			loginDialog = $('<div/>', { id : "loginDialog" }).html(login);
-
 			$("#loginDialog:ui-dialog").dialog("destroy");
+
+			loginDialog = $('<div/>', { id : "loginDialog" }).html(login);
 
 			loginDialog.dialog({
 				modal : true,
@@ -77,6 +81,7 @@
 		setupLoginForm : function() {
 			if ($("#loginForm").length) {
 				loginForm = $("#loginForm");
+				$.ffs_base.clearFormValues(loginForm);
 
 				if ($("#loginSubmit").length)
 					$("#loginSubmit").button();
@@ -107,8 +112,9 @@
 
 					if (data.result) {
 						console.log(data);
+						window.location = siteUrl + data.redirect;
 					} else {
-						loginDialog.dialog("widget").animate({ width : "580" }, {
+						loginDialog.dialog("widget").animate({ width : "660" }, {
 							duration : 500,
 							step : function() {
 								loginDialog.dialog('option', 'position', 'center');
@@ -117,7 +123,7 @@
 								$("<div/>", {
 									id : "loginError", class : "ui-state-error ui-corner-all"
 								}).css({
-									"padding" : "0 1em", "float" : "right"
+									"padding" : "0 6px", "float" : "right"
 								}).html(data.message).fadeIn("slow").insertAfter(loginModal);
 							}
 						});
@@ -148,6 +154,7 @@
 		setupRegisterForm: function() {
 			if ($("#registerForm").length) {
 				var registerForm = $("#registerForm");
+				$.ffs_base.clearFormValues(registerForm);
 
 				if ($("#address").length) {
 					var address = $("#address");
@@ -198,9 +205,10 @@
 						registerLoading.fadeOut("fast");
 
 					if (data.result) {
-						console.log(data);
+						registerDialog.dialog("destroy");
+						window.location = siteUrl + data.redirect;
 					} else {
-						registerDialog.dialog("widget").animate({ width : "650" }, {
+						registerDialog.dialog("widget").animate({ width : "660" }, {
 							duration : 500,
 							step : function() {
 								registerDialog.dialog('option', 'position', 'center');

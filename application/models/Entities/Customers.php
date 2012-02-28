@@ -79,11 +79,6 @@ class Customers
      */
     private $modified;
 
-    /**
-     * @var boolean $activated
-     */
-    private $activated;
-
 
     /**
      * Get id
@@ -353,25 +348,5 @@ class Customers
     public function getModified()
     {
         return $this->modified;
-    }
-
-    /**
-     * Set activated
-     *
-     * @param boolean $activated
-     */
-    public function setActivated($activated)
-    {
-        $this->activated = $activated;
-    }
-
-    /**
-     * Get activated
-     *
-     * @return boolean 
-     */
-    public function getActivated()
-    {
-        return $this->activated;
     }
 }

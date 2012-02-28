@@ -64,6 +64,3 @@ Entities\Customers:
     modified:
       type: datetime
       nullable: false
-    activated:
-      type: boolean
-      nullable: false

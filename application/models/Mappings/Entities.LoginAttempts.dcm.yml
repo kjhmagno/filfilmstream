@@ -13,7 +13,7 @@ Entities\LoginAttempts:
       length: 40
       nullable: false
       column: ip_address
-    account:
+    customer:
       type: string
       length: 50
       nullable: false
